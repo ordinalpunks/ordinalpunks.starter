@@ -16,6 +16,7 @@ require 'logutils'
 
 # our own code
 require 'feedtxt/version'  # let it always go first
+require 'feedtxt/parser'
 
 
 
