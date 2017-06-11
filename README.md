@@ -84,30 +84,33 @@ and use like:
 ``` ruby
 
 feed_metadata = feed[0]
+feed_items    = feed[1]
+
 feed_metadata[ 'title' ]
 # => "My Example Feed"
 feed_metadata[ 'feed_url' ]
 # => "https://example.org/feed.txt"
 
-feed_items         = feed[1]
-feed_item_metadata = feed_items[0][0]
-feed_item_content  = feed_items[0][1]
+item          = feed_items[0]   # or feed[1][0]
+item_metadata = item[0]         # or feed[1][0][0]
+item_content  = item[1]         # or feed[1][0][1]
 
-feed_item_metadata[ 'id' ]
+item_metadata[ 'id' ]
 # => "2"
-feed_item_metadata[ 'url']
+item_metadata[ 'url' ]
 # => "https://example.org/second-item"
-feed_item_content
+item_content
 # => "This is a second item."
 
-feed_item_metadata = feed_items[1][0]
-feed_item_content  = feed_items[1][1]
+item          = feed_items[1]    # or feed[1][1]
+item_metadata = item[0]          # or feed[1][1][0]
+item_content  = item[1]          # or feed[1][1][1]
 
-feed_item_metadata[ 'id' ]
+item_metadata[ 'id' ]
 # => "1"
-feed_item_metadata[ 'url']
+item_metadata[ 'url' ]
 # => "https://example.org/initial-post"
-feed_item_content
+item_content
 # => "Hello, world!"
 ...
 ```
@@ -118,7 +121,7 @@ Another example. Let's try a podcast:
 ``` ruby
 text =<<TXT
 |>>>
-comment: "This is a podcast feed. You can add this feed to your podcast client using the following URL: http://therecord.co/feed.json"
+comment: "This is a podcast feed. You can add..."
 title:   "The Record"
 home_page_url: "http://therecord.co/"
 feed_url:      "http://therecord.co/feed.txt"
@@ -179,20 +182,22 @@ and use like:
 
 ``` ruby
 feed_metadata = feed[0]
+feed_items    = feed[1]
+
 feed_metadata[ 'title' ]
 # => "The Record"
 feed_metadata[ 'feed_url' ]
 # => "http://therecord.co/feed.txt"
 
-feed_items         = feed[1]
-feed_item_metadata = feed_items[0][0]
-feed_item_content  = feed_items[0][1]
+item          = feed_items[0]  # or feed[1][0]
+item_metadata = item[0]        # or feed[1][0][0]
+item_content  = item[1]        # or feed[1][0][1]
 
-feed_item_metadata[ 'title' ]
+item_metadata[ 'title' ]
 # => "Special #1 - Chris Parrish"
-feed_item_metadata[ 'url']
+item_metadata[ 'url' ]
 # => "http://therecord.co/chris-parrish
-feed_item_content
+item_content
 # => "Chris has worked at [Adobe][1] and as a founder of Rogue Sheep..."
 ...
 ```
