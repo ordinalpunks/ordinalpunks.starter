@@ -3,11 +3,13 @@
 
 # core and stdlibs
 
+require 'strscan'    ## StringScanner
 require 'json'
 require 'yaml'
 require 'date'
 require 'time'
 require 'pp'
+
 
 
 # 3rd party gems/libs
@@ -18,6 +20,17 @@ require 'logutils'
 require 'feedtxt/version'  # let it always go first
 require 'feedtxt/parser'
 
+
+
+
+##  add shortcut / alias e.g.
+##   lets you use:
+##    Feedtxt.parse  instead of Feedtxt::Parser.parse
+module Feedtxt
+  def self.parse( text, opts={} )
+    Parser.parse( text,  )
+  end
+end
 
 
 

@@ -8,5 +8,5 @@ lib/feedtxt/version.rb
 test/feeds/spec/example.yaml.txt
 test/feeds/spec/podcast.yaml.txt
 test/helper.rb
-test/test_version.rb
+test/test_scanner.rb
 test/test_yaml.rb

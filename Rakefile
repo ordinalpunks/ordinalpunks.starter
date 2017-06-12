@@ -5,7 +5,7 @@ Hoe.spec 'feedtxt' do
 
   self.version = Feedtxt::VERSION
 
-  self.summary = "feedtxt - reads Feed.TXT - feeds in text (unicode) - publish & share posts, articles, podcasts, 'n' more"
+  self.summary = "feedtxt - reads Feed.TXT a.k.a. RSS (Really Simple Sharing) 5.0 ;-) - feeds in text (unicode) - publish & share posts, articles, podcasts, 'n' more"
   self.description = summary
 
   self.urls    = ['https://github.com/feedtxt/feedtxt']

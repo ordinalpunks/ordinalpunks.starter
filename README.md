@@ -10,8 +10,8 @@
 
 ## Usage
 
-Use `Feedtxt::Parser.parse` to read / parse feeds in text (using the Feed.TXT)
-format.
+Use `Feedtxt.parse` to read / parse feeds in text using the Feed.TXT
+format also known as RSS (Really Simple Sharing) 5.0 ;-).
 The parse method will return an array:
 
 ```
@@ -52,7 +52,7 @@ Hello, world!
 <<<|
 TXT
 
-feed = Feedtxt::Parser.parse( text )
+feed = Feedtxt.parse( text )
 pp feed
 ```
 
@@ -148,7 +148,7 @@ He lives on [Bainbridge Island][3], a quick ferry ride from Seattle.
 <<<|  
 TXT
 
-feed = Feedtxt::Parser.parse( text )
+feed = Feedtxt.parse( text )
 pp feed
 ```
 

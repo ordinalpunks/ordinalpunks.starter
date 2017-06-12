@@ -20,47 +20,56 @@ class Parser
 
 
 
-  FEED_BEGIN_RX = %r{^\|>>>$}
-  FEED_END_RX   = %r{^<<<\|$}
-  FEED_NEXT_RX  = %r{^</>$}       ## pass 1: split/break up blocks
-  FEED_META_RX  = %r{^---$}       ## pass 2: break up item into metadata and content block
+  ## note:
+  ##   regex excape  pipe: | to \|
+  ##   \\ needs to get escaped twice e.g. (\\ becomes \)
+  ##  e.g. |>>>  or |>>>>>
+  FEED_BEGIN = %{^[ ]*\\|>>>+[ ]*$}    ## note: allow leading n trailing spaces; allow 3 or more brackets
+  ##  e.g. <<<| or <<<<<<|
+  FEED_END   = %{^[ ]*<<<+\\|[ ]*$}    ## note: allow leading n trailing spaces; allow 3 or more brackets
+
+  ## e.g.</>  or <<</>>>
+  FEED_NEXT  = %{^[ ]*<+/>+[ ]*$}       ## pass 1: split/break up blocks
+  ## e.g. --- or -----
+  FEED_META  = %{^[ ]*---+[ ]*$}       ## pass 2: break up item into metadata and content block
+
 
 
   def parse
 
     ## find start marker e.g. |>>>
-    ##    todo: use regex - allow three or more >>>>>> or <<<<<<
-    ##    todo: allow spaces before and after
+    ##    use regex - allow three or more >>>>>> or <<<<<<
+    ##    allow spaces before and after
 
+    s = StringScanner.new( @text )
 
-    ## todo/fix:
-    ##    use index-like finder return posbeg and posend!!!
-    ##      regex is not fixed length/width; we need to know the length
-    ##   check what is the best way?  use regex match or something???
+    prolog = s.scan_until( /(?=#{FEED_BEGIN})/ )
+    ## pp prolog
 
-    posbeg = @text.index( FEED_BEGIN_RX )
-    if posbeg.nil?
+    feed_begin = s.scan( /#{FEED_BEGIN}/ )
+    if feed_begin.empty?    ## use blank? why? why not??
       ## nothing found return empty array for now; return nil - why? why not?
       puts "warn !!! no begin marker found e.g. |>>>"
       return []
     end
 
-    posend = @text.index( FEED_END_RX, posbeg )
-    if posend.nil?
+
+    buf =  s.scan_until( /(?=#{FEED_END})/ )
+    buf = buf.strip    # remove leading and trailing whitespace
+
+    feed_end = s.scan( /#{FEED_END}/ )
+    if feed_end.empty?   ## use blank? why? why not??
       ## nothing found return empty array for now; return nil - why? why not?
       puts "warn !!! no end marker found e.g. <<<|"
       return []
     end
 
-    ## cutoff - get text between begin and end marker
-    buf = @text[ posbeg+4...posend ].strip
-    ## pp buf
 
     ####
     ## pass 1: split blocks by </>
-    ###    todo: allow   <<<</>>>>
+    ###    note: allows   <<<</>>>>
 
-    blocks = buf.split( FEED_NEXT_RX )
+    blocks = buf.split( /#{FEED_NEXT}/ )
     ## pp blocks
 
     ## 1st block is feed meta data
@@ -72,13 +81,17 @@ class Parser
       ###   note: do NOT use split e.g.--- is used by markdown
       ##      only search for first --- to split (all others get ignored)
       ##    todo: make three dashes --- (3) not hard-coded (allow more)
-      posmeta = block.index( FEED_META_RX )
-      item = []
-      item[0] = block[0...posmeta].strip
-      item[1] = block[posmeta+3..-1].strip
 
-      item_metadata = YAML.load( item[0] )
-      item_content  = item[1]
+      s2 = StringScanner.new( block )
+
+      item_metadata = s2.scan_until( /(?=#{FEED_META})/ )
+      item_metadata = item_metadata.strip    # remove leading and trailing whitespace
+      item_metadata = YAML.load( item_metadata )   ## convert to hash with yaml
+
+      feed_meta = s2.scan( /#{FEED_META}/ )
+
+      item_content = s2.rest
+      item_content = item_content.strip     # remove leading and trailing whitespace
 
       feed_items << [item_metadata, item_content]
     end
@@ -88,4 +101,5 @@ class Parser
 
 
 end  # class Parser
+
 end # module Feedtxt

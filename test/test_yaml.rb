@@ -14,11 +14,6 @@ class TestYaml < MiniTest::Test
     text = read_text( 'spec/example.yaml' )
     pp text
 
-    feed = Feedtxt::Parser.parse( text )
-    pp feed
-
-    ## pp feed.to_json
-
     exp = [
       {"title"=>"My Example Feed",
   "home_page_url"=>"https://example.org/",
@@ -32,19 +27,14 @@ class TestYaml < MiniTest::Test
        "Hello, world!"
     ]]]
 
-
-    assert_equal exp, feed
+    assert_equal exp, Feedtxt::Parser.parse( text )
+    assert_equal exp, Feedtxt.parse( text )     ## try shortcut alias too
   end
 
   def test_podcast
 
     text = read_text( 'spec/podcast.yaml' )
     pp text
-
-    feed = Feedtxt::Parser.parse( text )
-    pp feed
-
-    ## pp feed.to_json
 
     exp =[{"comment"=>
    "This is a podcast feed. You can add this feed to your podcast client using the following URL: http://therecord.co/feed.json",
@@ -65,7 +55,8 @@ class TestYaml < MiniTest::Test
        "duration_in_seconds"=>6629}]},
    "Chris has worked at [Adobe][1] and as a founder of Rogue Sheep, which won an Apple Design Award for Postage.\nChris's new company is Aged & Distilled with Guy English - which shipped [Napkin](2),\na Mac app for visual collaboration. Chris is also the co-host of The Record.\nHe lives on [Bainbridge Island][3], a quick ferry ride from Seattle.\n\n[1]: http://adobe.com/\n[2]: http://aged-and-distilled.com/napkin/\n[3]: http://www.ci.bainbridge-isl.wa.us/"]]]
 
-    assert_equal exp, feed
+    assert_equal exp, Feedtxt::Parser.parse( text )
+    assert_equal exp, Feedtxt.parse( text )   ## try shortcut alias too
   end
 
 
