@@ -202,6 +202,69 @@ item_content
 ...
 ```
 
+## Alternative Meta Data Formats
+
+Note: Feed.TXT supports alternative formats / styles for meta data blocks.
+For now YAML, JSON and INI style
+are built-in and shipping with the `feedtxt` gem.
+
+
+### JSON Example
+
+```
+|{
+"title":          "My Example Feed",
+"home_page_url":  "https://example.org/",
+"feed_url":       "https://example.org/feed.txt"
+}/{
+"id":  "2",
+"url": "https://example.org/second-item"
+}-{
+This is a second item.
+}/{
+"id":  "1",
+"url": "https://example.org/initial-post"
+}-{
+Hello, world!
+}|
+```
+
+Note: Use `|{` and `}|` to begin and end your Feed.TXT.
+Use `}/{` for first or next item
+and `}-{` for meta blocks inside items.
+
+
+(Source: [`feeds/spec/example.json.txt`](https://github.com/feedtxt/feedtxt/blob/master/test/feeds/spec/example.json.txt))
+
+
+### INI Example
+
+```
+[>>>
+title         = My Example Feed
+home_page_url = https://example.org/
+feed_url      = https://example.org/feed.txt
+</>
+id  = 2
+url = https://example.org/second-item
+---
+This is a second item.
+</>
+id  = 1
+url = https://example.org/initial-post
+---
+Hello, world!
+<<<]
+```
+
+(Source: [`feeds/spec/example.ini.txt`](https://github.com/feedtxt/feedtxt/blob/master/test/feeds/spec/example.ini.txt))
+
+
+Note: Use `[>>>` and `<<<]` to begin and end your Feed.TXT.
+Use `</>` for first or next item
+and `---` for meta blocks inside items.
+
+
 
 ## License
 
