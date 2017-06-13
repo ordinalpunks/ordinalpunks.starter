@@ -5,11 +5,11 @@
 }/{
 "id":  "2",
 "url": "https://example.org/second-item"
-}---{
+}-{
 This is a second item.
 }/{
 "id":  "1",
 "url": "https://example.org/initial-post"
-}---{
+}-{
 Hello, world!
 }|

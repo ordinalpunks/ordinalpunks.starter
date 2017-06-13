@@ -14,6 +14,7 @@ require 'pp'
 
 # 3rd party gems/libs
 require 'logutils'
+require 'props'     ## used for IniFile.parse
 
 
 # our own code
@@ -21,6 +22,7 @@ require 'feedtxt/version'  # let it always go first
 require 'feedtxt/parser'
 require 'feedtxt/parser/json'
 require 'feedtxt/parser/yaml'
+require 'feedtxt/parser/ini'
 
 
 

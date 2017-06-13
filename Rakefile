@@ -19,6 +19,10 @@ Hoe.spec 'feedtxt' do
 
   self.licenses = ['Public Domain']
 
+  ### todo
+  ##   add deps e.g. props gem for INI.load
+
+
   self.spec_extras = {
     required_ruby_version: '>= 1.9.2'
   }

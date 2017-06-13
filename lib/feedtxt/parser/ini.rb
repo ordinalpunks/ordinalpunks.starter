@@ -3,7 +3,7 @@
 module Feedtxt
 
 
-class YamlParser
+class IniParser
 
   include LogUtils::Logging
 
@@ -21,12 +21,12 @@ class YamlParser
 
 
   ## note:
-  ##   regex excape  pipe: | to \|
+  ##   regex excape  bracket: [ to \[
   ##   \\ needs to get escaped twice e.g. (\\ becomes \)
-  ##  e.g. |>>>  or |>>>>>
-  FEED_BEGIN = "^[ ]*\\|>>>+[ ]*$"    ## note: allow leading n trailing spaces; allow 3 or more brackets
-  ##  e.g. <<<| or <<<<<<|
-  FEED_END   = "^[ ]*<<<+\\|[ ]*$"    ## note: allow leading n trailing spaces; allow 3 or more brackets
+  ##  e.g. [>>>  or [>>>>>
+  FEED_BEGIN = "^[ ]*\\[>>>+[ ]*$"    ## note: allow leading n trailing spaces; allow 3 or more brackets
+  ##  e.g. <<<] or <<<<<<]
+  FEED_END   = "^[ ]*<<<+\\][ ]*$"    ## note: allow leading n trailing spaces; allow 3 or more brackets
 
   ## e.g.</>  or <<</>>>
   FEED_NEXT  = "^[ ]*<+/>+[ ]*$"       ## pass 1: split/break up blocks
@@ -37,7 +37,7 @@ class YamlParser
 
   def parse
 
-    ## find start marker e.g. |>>>
+    ## find start marker e.g. [>>>
     ##    use regex - allow three or more >>>>>> or <<<<<<
     ##    allow spaces before and after
 
@@ -75,7 +75,7 @@ class YamlParser
     ## 1st block is feed meta data
     block1st = blocks.shift       ## get/remove 1st block from blocks
     block1st = block1st.strip     ## strip leading and trailing whitespace
-    feed_metadata = YAML.load( block1st )
+    feed_metadata = INI.load( block1st )
 
     feed_items = []
     blocks.each do |block|
@@ -87,7 +87,7 @@ class YamlParser
 
       item_metadata = s2.scan_until( /(?=#{FEED_META})/ )
       item_metadata = item_metadata.strip    # remove leading and trailing whitespace
-      item_metadata = YAML.load( item_metadata )   ## convert to hash with yaml
+      item_metadata = INI.load( item_metadata )   ## convert to hash with inifile parser
 
       feed_meta = s2.scan( /#{FEED_META}/ )
 
@@ -101,6 +101,6 @@ class YamlParser
   end # method parse
 
 
-end  # class YamlParser
+end  # class IniParser
 
 end # module Feedtxt
