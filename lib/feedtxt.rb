@@ -33,6 +33,10 @@ module Feedtxt
   def self.parse( text, opts={} )
     Parser.parse( text,  )
   end
+
+  INI  = IniParser     ## note: add a shortcut; lets you use Feedtxt::INI.parse
+  YAML = YamlParser    ## note: add a shortcut; lets you use Feedtxt::YAML.parse
+  JSON = JsonParser    ## note: add a shortcut; lets you use Feedttxt::JSON.parse
 end
 
 

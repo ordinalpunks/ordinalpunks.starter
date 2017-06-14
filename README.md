@@ -207,6 +207,32 @@ item_content
 Note: Feed.TXT supports alternative formats / styles for meta data blocks.
 For now YAML, JSON and INI style
 are built-in and shipping with the `feedtxt` gem.
+To use a format-specific parser use:
+
+- `Feedtxt::YAML.parse`
+- `Feedtxt::JSON.parse`
+- `Feedtxt::INI.parse`
+
+Note: `Feedtxt.parse` will handle all formats auto-magically,
+that is, it will check the text for the best matching (first)
+feed begin marker
+to find out what meta data format parser to use.
+
+``` ruby
+Feedtxt::YAML::FEED_BEGIN
+# => "^[ ]*\\|>>>+[ ]*$"
+Feedtxt::JSON::FEED_BEGIN
+# => "^[ ]*\\|{+[ ]*$"
+Feedtxt::INI::FEED_BEGIN
+# => "^[ ]*\\[>>>+[ ]*$"
+```
+
+| Format | `FEED_BEGIN` |  
+|--------|--------------|
+| YAML   | `\|>>>`      |
+| JSON   | `\|{`        |
+| INI    | `\[>>>`      |
+
 
 
 ### JSON Example
@@ -252,6 +278,26 @@ This is a second item.
 </>
 id  = 1
 url = https://example.org/initial-post
+---
+Hello, world!
+<<<]
+```
+
+or
+
+```
+[>>>
+title:         My Example Feed
+home_page_url: https://example.org/
+feed_url:      https://example.org/feed.txt
+</>
+id:  2
+url: https://example.org/second-item
+---
+This is a second item.
+</>
+id:  1
+url: https://example.org/initial-post
 ---
 Hello, world!
 <<<]

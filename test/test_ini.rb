@@ -27,7 +27,7 @@ class TestIni < MiniTest::Test
        "Hello, world!"
     ]]]
 
-    assert_equal exp, Feedtxt::IniParser.parse( text )
+    assert_equal exp, Feedtxt::INI.parse( text )
     assert_equal exp, Feedtxt.parse( text )     ## try shortcut alias too
   end
 
@@ -54,7 +54,7 @@ class TestIni < MiniTest::Test
       "duration_in_seconds"=>"6629"}},
    "Chris has worked at [Adobe][1] and as a founder of Rogue Sheep, which won an Apple Design Award for Postage.\nChris's new company is Aged & Distilled with Guy English - which shipped [Napkin](2),\na Mac app for visual collaboration. Chris is also the co-host of The Record.\nHe lives on [Bainbridge Island][3], a quick ferry ride from Seattle.\n\n[1]: http://adobe.com/\n[2]: http://aged-and-distilled.com/napkin/\n[3]: http://www.ci.bainbridge-isl.wa.us/"]]]
 
-    assert_equal exp, Feedtxt::IniParser.parse( text )
+    assert_equal exp, Feedtxt::INI.parse( text )
     assert_equal exp, Feedtxt.parse( text )   ## try shortcut alias too
   end
 

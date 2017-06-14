@@ -75,7 +75,7 @@ class YamlParser
     ## 1st block is feed meta data
     block1st = blocks.shift       ## get/remove 1st block from blocks
     block1st = block1st.strip     ## strip leading and trailing whitespace
-    feed_metadata = YAML.load( block1st )
+    feed_metadata = ::YAML.load( block1st )
 
     feed_items = []
     blocks.each do |block|
@@ -87,7 +87,7 @@ class YamlParser
 
       item_metadata = s2.scan_until( /(?=#{FEED_META})/ )
       item_metadata = item_metadata.strip    # remove leading and trailing whitespace
-      item_metadata = YAML.load( item_metadata )   ## convert to hash with yaml
+      item_metadata = ::YAML.load( item_metadata )   ## convert to hash with yaml
 
       feed_meta = s2.scan( /#{FEED_META}/ )
 

@@ -79,7 +79,7 @@ class JsonParser
     ## 1st block is feed meta data
     block1st = blocks.shift       ## get/remove 1st block from blocks
     block1st = block1st.strip    # remove leading and trailing whitespaces
-    feed_metadata = JSON.parse( "{ #{block1st} }" )
+    feed_metadata = ::JSON.parse( "{ #{block1st} }" )
 
     feed_items = []
     blocks.each do |block|
@@ -91,7 +91,7 @@ class JsonParser
 
       item_metadata = s2.scan_until( /(?=#{FEED_META})/ )
       item_metadata = item_metadata.strip    # remove leading and trailing whitespace
-      item_metadata = JSON.parse( "{ #{item_metadata} }" )   ## convert to hash with yaml
+      item_metadata = ::JSON.parse( "{ #{item_metadata} }" )   ## convert to hash with yaml
 
       feed_meta = s2.scan( /#{FEED_META}/ )
 

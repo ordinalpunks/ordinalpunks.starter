@@ -75,7 +75,7 @@ class IniParser
     ## 1st block is feed meta data
     block1st = blocks.shift       ## get/remove 1st block from blocks
     block1st = block1st.strip     ## strip leading and trailing whitespace
-    feed_metadata = INI.load( block1st )
+    feed_metadata = ::INI.load( block1st )
 
     feed_items = []
     blocks.each do |block|
@@ -87,7 +87,7 @@ class IniParser
 
       item_metadata = s2.scan_until( /(?=#{FEED_META})/ )
       item_metadata = item_metadata.strip    # remove leading and trailing whitespace
-      item_metadata = INI.load( item_metadata )   ## convert to hash with inifile parser
+      item_metadata = ::INI.load( item_metadata )   ## convert to hash with inifile parser
 
       feed_meta = s2.scan( /#{FEED_META}/ )
 
@@ -102,5 +102,6 @@ class IniParser
 
 
 end  # class IniParser
+
 
 end # module Feedtxt

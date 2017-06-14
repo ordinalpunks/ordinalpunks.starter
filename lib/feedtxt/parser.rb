@@ -23,25 +23,25 @@ class Parser
     ## auto-detect format
     ##   use "best" matching format (e.g. first match by pos(ition))
 
-    klass = YamlParser    ## default to yamlparser for now
-    pos   = 9999999     ## todo:use  MAX INTEGER or something!!
+    klass = YAML           ## default to yamlparser for now
+    pos   = 9_999_999     ## todo:use  MAX INTEGER or something!!
 
-    json = @text.index( /#{JsonParser::FEED_BEGIN}/ )
+    json = @text.index( /#{JSON::FEED_BEGIN}/ )
     if json    # found e.g. not nil? incl. 0
       pos   = json
-      klass = JsonParser
+      klass = JSON
     end
 
-    ini = @text.index( /#{IniParser::FEED_BEGIN}/ )
+    ini = @text.index( /#{INI::FEED_BEGIN}/ )
     if ini && ini < pos  # found e.g. not nil? and match before last?
       pos   = ini
-      klass = IniParser
+      klass = INI
     end
 
-    yaml = @text.index( /#{YamlParser::FEED_BEGIN}/ )
+    yaml = @text.index( /#{YAML::FEED_BEGIN}/ )
     if yaml && yaml < pos  # found e.g. not nil? and match before last?
       pos   = yaml
-      klass = YamlParser
+      klass = YAML
     end
 
     feed = klass.parse( @text )
