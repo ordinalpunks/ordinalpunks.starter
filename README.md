@@ -216,7 +216,17 @@ To use a format-specific parser use:
 Note: `Feedtxt.parse` will handle all formats auto-magically,
 that is, it will check the text for the best matching (first)
 feed begin marker
-to find out what meta data format parser to use.
+to find out what meta data format parser to use:
+
+| Format | `FEED_BEGIN` |  
+|--------|--------------|
+| YAML   | `\|>>>`      |
+| JSON   | `\|{`        |
+| INI    | `[>>>`       |
+
+
+Or use the built-in text pattern (regular expression)
+constants to find out:
 
 ``` ruby
 Feedtxt::YAML::FEED_BEGIN
@@ -226,12 +236,6 @@ Feedtxt::JSON::FEED_BEGIN
 Feedtxt::INI::FEED_BEGIN
 # => "^[ ]*\\[>>>+[ ]*$"
 ```
-
-| Format | `FEED_BEGIN` |  
-|--------|--------------|
-| YAML   | `\|>>>`      |
-| JSON   | `\|{`        |
-| INI    | `\[>>>`      |
 
 
 
