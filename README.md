@@ -8,7 +8,7 @@ See [**Punks - The Free White Label Quick Starter Edition »**](https://github.c
 ---
 
 
-New to Ordinal Punks? For some background see [**Awesome 100 Ordinal Punks (Anno 2023) Notes - 24×24 Pixel Art on the (Bitcoin) Blockchain »**](https://github.com/cryptopunksnotdead/cryptopunks/tree/master/awesome-ordinalpunks)
+New to Ordinal Punks? For some background see [**Awesome 100 Ordinal Punks (Anno 2023) Notes - 24×24 Pixel Art on the (Bitcoin) Blockchain »**](https://github.com/ordinalpunks/awesome-ordinalpunks)
 
 
 # 100 Ordinal Punks - The Free White Label Quick Starter Edition
