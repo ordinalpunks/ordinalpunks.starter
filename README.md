@@ -20,7 +20,7 @@ copy of the Ordinal Punks collection (Anno 2023) using text prompts ("attributes
 
 ---
 
-Note / Disclaimer:  I (Gerald Bauer) am the creator of the punk's not dead text-to-image generation algorithm  (& [punk spritesheet](https://github.com/cryptopunksnotdead/punks.spritesheet)) BUT
+Note / Disclaimer:  I (Gerald Bauer) am the creator of the punk's not dead text-to-image generation algorithm  (& [punk spritesheet](https://github.com/openpunkart/punks.spritesheet)) BUT
 have heard about Ordinal Punks in the news and
 I have no insight knowledge and
 I am NOT affiliated with Ordinal Punks (HODLing: 0).
