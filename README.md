@@ -185,16 +185,16 @@ into the tabular dataset in the comma-separated values (.csv) format.
 The [**ordinalpunks.csv**](ordinalpunks.csv) dataset (with 100 records / rows) reads:
 
 ``` csv
-id,  type,  gender, skin_tone,  count, accessories
-1,  Robot,   Male,,       1,  Big Beard
-2,  Human,   Male,    2,  2,  Bubble Gum / Birthday Hat
-3,  Human,   Female,  1,  3,  Flowers / Frown / Gold Chain
-4,  Demon,   Male,,       2,  Hoodie / Pipe
-5,  Ape,     Male, Blue,  2,  Buck Teeth / Cowboy Hat
-6,  Human,   Male,    3,  2,  Laser Eyes / Cowboy Hat B & W
-7,  Human,   Male,    1,  1,  Cap Burger King
-8,  Vampire, Male,,       1,  Demon Horns
-9,  Human,   Female,  Orange,  1,  Crown
+id,  type,  gender, skin_tone, accessories
+1,  Robot,   Male,,        Big Beard
+2,  Human,   Male,    2,   Bubble Gum / Birthday Hat
+3,  Human,   Female,  1,   Flowers / Frown / Gold Chain
+4,  Demon,   Male,,        Hoodie / Pipe
+5,  Ape,     Male, Blue,   Buck Teeth / Cowboy Hat
+6,  Human,   Male,    3,   Laser Eyes / Cowboy Hat B & W
+7,  Human,   Male,    1,   Cap Burger King
+8,  Vampire, Male,,        Demon Horns
+9,  Human,   Female,  Orange,  Crown
 ...
 ```
 
@@ -400,14 +400,12 @@ such as
  "type"       =>"Robot",
  "gender"     =>"Male",
  "skin_tone"  =>"",
- "count"      =>"1",
  "accessories"=>"Big Beard"}
 # or
 {"id"         =>"2",
  "type"       =>"Human",
  "gender"     =>"Male",
  "skin_tone"  =>"2",
- "count"      =>"2",
  "accessories"=>"Bubble Gum / Birthday Hat"}
 ```
 
@@ -584,16 +582,16 @@ dataset v2 in the comma-separated values (.csv) format.
 The [**ordinalpunks_v2.csv**](ordinalpunks_v2.csv) dataset (with 100 records / rows) reads:
 
 ``` csv
-id,  type,  gender, skin_tone,  count, accessories
-1,  Robot,   Male,,       1,  Big Beard
-2,  Human,   Male,    2,  2,  Birthday Hat / Bubble Gum
-3,  Human,   Female,  1,  3,  Flowers / Frown / Gold Chain
-4,  Demon,   Male,,       2,  Hoodie / Pipe
-5,  Ape,     Male, Blue,  2,  Cowboy Hat / Buck Teeth
-6,  Human,   Male,    3,  2,  Cowboy Hat / Laser Eyes
-7,  Human,   Male,    1,  1,  Cap Burger King
-8,  Vampire, Male,,       1,  Demon Horns
-9,  Human,   Female,  Orange,  1,  Crown
+id,  type,  gender, skin_tone, accessories
+1,  Robot,   Male,,           Big Beard
+2,  Human,   Male,    2,      Birthday Hat / Bubble Gum
+3,  Human,   Female,  1,      Flowers / Frown / Gold Chain
+4,  Demon,   Male,,           Hoodie / Pipe
+5,  Ape,     Male, Blue,      Cowboy Hat / Buck Teeth
+6,  Human,   Male,    3,      Cowboy Hat / Laser Eyes
+7,  Human,   Male,    1,      Cap Burger King
+8,  Vampire, Male,,           Demon Horns
+9,  Human,   Female,  Orange, Crown
 ...
 ```
 
