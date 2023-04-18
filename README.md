@@ -516,6 +516,90 @@ and the 4x version:
 
 
 
+
+
+## Bonus - Ordinal Punks v2
+
+**Before - After (in 8x)**
+
+No. 6  ![](i/6@8x.png) ![](i/6_v2@8x.png)
+
+No. 48 ![](i/48@8x.png) ![](i/48_v2@8x.png)
+
+No. 59 ![](i/59@8x.png) ![](i/59_v2@8x.png)
+
+No. 78 ![](i/78@8x.png) ![](i/78_v2@8x.png)
+
+No. 88 ![](i/88@8x.png) ![](i/88_v2@8x.png)
+
+...
+
+
+**Update**  While preparing some ordinal punk variants e.g. greenbacks, gold/silver/bronze, blue chip, etc.
+(see the [Ordinal Punk Sandbox](https://github.com/ordinalpunks/ordinalpunks.sandbox))
+I found more minor & major bugs / errors / glitches in the official metadata (text-prompt attributes):
+
+
+(1) Broken / wrong stacking order for laser eyes & friends.
+In ![](i/6.png) Ordinal Punk #6
+or ![](i/48.png) Ordinal Punk #48, for example, the laser eyes get semi-hidden by the headwear / hats  - the fix: let' change the order, that is, paste the hats before the laser eyes.
+
+- no. 6 -  Laser Eyes / Cowboy Hat B & W  => Cowboy Hat / Laser Eyes
+- no. 48 - Laser Eyes / Cap Forward =>  Cap Forward / Laser Eyes
+
+The same holds for pipes or cigarettes (with smoke).
+
+- no. 37 - 3D Glasses / Cigarette / Buck Teeth  =>  3D Glasses / Buck Teeth / Cigarette
+- no. 78 - Pipe / Hoodie   =>  Hoodie / Pipe
+
+
+
+(2) Cigarette or Pipe?
+![](i/59.png) Ordinal Punk #59 sports a cigarette AND a pipe - the fix: let's drop the cigarette.  Cigar or Bubble Gum?
+![](i/52.png) Ordinal Punk #52 sports a cigar AND a bubble gum - the fix: let's drop the (hidden) cigar.
+![](i/98.png) Tiara or Crown?
+Ordinal Punk #98 sports a tiara AND a crown - the fix: let's drop the (hidden) tiara.
+
+
+
+(3) True colors. Some Ordinal Punks use black & white attributes (sixteen in total)  - the fix: let's change all black & white attributes to "true color".
+
+- Beanie B & W => Beanie
+- Police Cap B & W   => Police Cap
+- 3D Glasses B & W    => 3D Glasses
+- ...
+
+
+For your convenience and easy (re)use I have published the alternate
+dataset v2 in the comma-separated values (.csv) format.
+The [**ordinalpunks_v2.csv**](ordinalpunks_v2.csv) dataset (with 100 records / rows) reads:
+
+``` csv
+id,  type,  gender, skin_tone,  count, accessories
+1,  Robot,   Male,,       1,  Big Beard
+2,  Human,   Male,    2,  2,  Birthday Hat / Bubble Gum
+3,  Human,   Female,  1,  3,  Flowers / Frown / Gold Chain
+4,  Demon,   Male,,       2,  Hoodie / Pipe
+5,  Ape,     Male, Blue,  2,  Cowboy Hat / Buck Teeth
+6,  Human,   Male,    3,  2,  Cowboy Hat / Laser Eyes
+7,  Human,   Male,    1,  1,  Cap Burger King
+8,  Vampire, Male,,       1,  Demon Horns
+9,  Human,   Female,  Orange,  1,  Crown
+...
+```
+
+
+Rerun the script. Resulting in:
+
+
+![](i/punks_v2.png)
+
+and the 4x version:
+
+![](i/punks_v2@4x.png)
+
+
+
 That's it.
 
 
