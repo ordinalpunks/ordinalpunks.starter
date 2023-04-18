@@ -532,15 +532,15 @@ Can you spot the differences?
 
 **Before - After (in 4x)**
 
-No. 6  ![](i/6@4x.png)  => ![](i/6_v2@4x.png)
+№6  ![](i/6@4x.png)  ⇒ ![](i/6_v2@4x.png)
 
-No. 48 ![](i/48@4x.png) => ![](i/48_v2@4x.png)
+№48 ![](i/48@4x.png) ⇒ ![](i/48_v2@4x.png)
 
-No. 59 ![](i/59@4x.png) => ![](i/59_v2@4x.png)
+№59 ![](i/59@4x.png) ⇒ ![](i/59_v2@4x.png)
 
-No. 78 ![](i/78@4x.png) => ![](i/78_v2@4x.png)
+№78 ![](i/78@4x.png) ⇒ ![](i/78_v2@4x.png)
 
-No. 88 ![](i/88@4x.png) => ![](i/88_v2@4x.png)
+№88 ![](i/88@4x.png) ⇒ ![](i/88_v2@4x.png)
 
 ...
 
@@ -553,13 +553,13 @@ For some hints - here's the break down of the new improved version 2 formula:
 In ![](i/6.png) Ordinal Punk #6
 or ![](i/48.png) Ordinal Punk #48, for example, the laser eyes get semi-hidden by the headwear / hats  - the fix: let' change the order, that is, paste the hats before the laser eyes.
 
-- no. 6 -  Laser Eyes / Cowboy Hat B & W  => Cowboy Hat / Laser Eyes
-- no. 48 - Laser Eyes / Cap Forward =>  Cap Forward / Laser Eyes
+- №6 -  Laser Eyes / Cowboy Hat B & W   ⇒  Cowboy Hat / Laser Eyes
+- №48 - Laser Eyes / Cap Forward   ⇒   Cap Forward / Laser Eyes
 
 The same holds for pipes or cigarettes (with smoke).
 
-- no. 37 - 3D Glasses / Cigarette / Buck Teeth  =>  3D Glasses / Buck Teeth / Cigarette
-- no. 78 - Pipe / Hoodie   =>  Hoodie / Pipe
+- №37 - 3D Glasses / Cigarette / Buck Teeth  ⇒  3D Glasses / Buck Teeth / Cigarette
+- №78 - Pipe / Hoodie   ⇒  Hoodie / Pipe
 
 
 
@@ -573,9 +573,9 @@ Ordinal Punk #98 sports a tiara AND a crown - the fix: let's drop the (hidden) t
 
 (3) True colors. Some Ordinal Punks use black & white attributes (sixteen in total)  - the fix: let's change all black & white attributes to "true color".
 
-- Beanie B & W => Beanie
-- Police Cap B & W   => Police Cap
-- 3D Glasses B & W    => 3D Glasses
+- Beanie B & W  ⇒ Beanie
+- Police Cap B & W   ⇒ Police Cap
+- 3D Glasses B & W    ⇒ 3D Glasses
 - ...
 
 
