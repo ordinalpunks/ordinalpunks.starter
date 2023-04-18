@@ -42,6 +42,7 @@ recs.each do |rec|
 
   img = Punk::Image.generate( *attributes )
   img.save( "./tmp/#{id}_v2.png")
+  img.zoom(4).save( "./tmp/#{id}_v2@4x.png")
   img.zoom(8).save( "./tmp/#{id}_v2@8x.png")
 
   composite << img   ## bonus: add to composite

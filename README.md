@@ -518,26 +518,35 @@ and the 4x version:
 
 
 
-## Bonus - Ordinal Punks v2
-
-**Before - After (in 8x)**
-
-No. 6  ![](i/6@8x.png) ![](i/6_v2@8x.png)
-
-No. 48 ![](i/48@8x.png) ![](i/48_v2@8x.png)
-
-No. 59 ![](i/59@8x.png) ![](i/59_v2@8x.png)
-
-No. 78 ![](i/78@8x.png) ![](i/78_v2@8x.png)
-
-No. 88 ![](i/88@8x.png) ![](i/88_v2@8x.png)
-
-...
+## Bonus - Ordinal Punks v2  - New Improved Formula
 
 
 **Update**  While preparing some ordinal punk variants e.g. greenbacks, gold/silver/bronze, blue chip, etc.
 (see the [Ordinal Punk Sandbox](https://github.com/ordinalpunks/ordinalpunks.sandbox))
-I found more minor & major bugs / errors / glitches in the official metadata (text-prompt attributes):
+I found minor & major bugs / errors / glitches in the official metadata (text-prompt attributes).
+
+Before diving into the new and improved version 2 formula - let's have a looksie
+at half a dozen before & afters, that is, v1s vs v2s.
+Can you spot the differences?
+
+
+**Before - After (in 4x)**
+
+No. 6  ![](i/6@4x.png)  => ![](i/6_v2@4x.png)
+
+No. 48 ![](i/48@4x.png) => ![](i/48_v2@4x.png)
+
+No. 59 ![](i/59@4x.png) => ![](i/59_v2@4x.png)
+
+No. 78 ![](i/78@4x.png) => ![](i/78_v2@4x.png)
+
+No. 88 ![](i/88@4x.png) => ![](i/88_v2@4x.png)
+
+...
+
+
+
+For some hints - here's the break down of the new improved version 2 formula:
 
 
 (1) Broken / wrong stacking order for laser eyes & friends.
